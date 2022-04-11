@@ -38,6 +38,10 @@ class counterTestCase {
         assertEquals(counter.contarMultiplos(3),2);
     }
 
-    
-    //asdasd
+    @Test
+    void testMayorCantidadPares() {
+    	Counter counter2 = new Counter();
+    	counter2.addNumber(122).addNumber(11).addNumber(12);
+        assertEquals(counter.mayorCantidadPares(counter2.getNumeros()),122);
+    }
 }
