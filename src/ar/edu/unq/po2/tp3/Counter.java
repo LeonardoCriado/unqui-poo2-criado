@@ -48,4 +48,33 @@ public class Counter {
         }
         return contador;
     }
+    
+    public int multipoMasAlto(int x, int y) {
+    	int multiplo = 1000;
+    	while (!(multiplo % x == 0 && multiplo % y == 0)) {
+    		multiplo--;
+    		if(multiplo == 0) return -1;
+    		} 
+    	return multiplo;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

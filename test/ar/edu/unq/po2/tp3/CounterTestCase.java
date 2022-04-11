@@ -44,4 +44,10 @@ class counterTestCase {
     	counter2.addNumber(122).addNumber(11).addNumber(12);
         assertEquals(counter.mayorCantidadPares(counter2.getNumeros()),122);
     }
+    
+    @Test
+    void testMultipoMasAlto() {
+        assertEquals(999,counter.multipoMasAlto(3,9));
+        assertEquals(-1,counter.multipoMasAlto(803,6));
+    }
 }
