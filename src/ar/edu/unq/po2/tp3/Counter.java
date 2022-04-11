@@ -47,5 +47,5 @@ public class Counter {
             x=x/10;
         }
         return contador;
-    }
+    }//testeando git 2
 }
