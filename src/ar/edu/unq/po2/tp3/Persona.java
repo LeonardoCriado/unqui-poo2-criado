@@ -39,4 +39,14 @@ public class Persona {
 		return edad.getYears();
 	}
 	
+	public boolean menorQue(Persona persona) {
+		return this.edad() < persona.edad();
+	}
+	
 }
+
+/*
+
+Si un bjeto le pide la edad a Persona no conoce cómo se obtiene el valor. Esto se llama encapsulamiento.
+
+*/
