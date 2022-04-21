@@ -53,4 +53,5 @@ public class EquipoDeTrabajo {
 		return sumaEdades/this.getIntegrantes().size();
 	}
 	
+	
 }
