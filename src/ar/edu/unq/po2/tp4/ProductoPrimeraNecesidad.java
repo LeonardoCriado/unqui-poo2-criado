@@ -9,27 +9,53 @@ package ar.edu.unq.po2.tp4;
  */
 public class ProductoPrimeraNecesidad extends Producto {
 	
+	protected double descuento = 0.1;
+	
+	protected double getDescuento() {
+		return descuento;
+	}
+
+	protected void setDescuento(double descuento) {
+		this.descuento = descuento;
+	}
+	
 	public ProductoPrimeraNecesidad() {
 
 	}	
 	
 	public ProductoPrimeraNecesidad(String nombre, double precio) {
 		super();
-		setNombre(nombre);
-		setPrecio(precio);
-		setPreciosCuidados(false);
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+		this.setPreciosCuidados(false);
 	}
 	
 	public ProductoPrimeraNecesidad(String nombre, double precio, boolean esPrecioCuidado) {
 		super();
-		setNombre(nombre);
-		setPrecio(precio);
-		setPreciosCuidados(esPrecioCuidado);
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+		this.setPreciosCuidados(esPrecioCuidado);
+	}
+	
+	public ProductoPrimeraNecesidad(String nombre, double precio, double descuento) {
+		super();
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+		this.setPreciosCuidados(false);
+		this.setDescuento(descuento);
+	}
+	
+	public ProductoPrimeraNecesidad(String nombre, double precio, boolean esPrecioCuidado, double descuento) {
+		super();
+		this.setNombre(nombre);
+		this.setPrecio(precio);
+		this.setPreciosCuidados(esPrecioCuidado);
+		this.setDescuento(descuento);
 	}
 	
 	
 	public double getPrecio() {
-		return precio * 0.9;
+		return precio * (1-this.getDescuento());
 	}
 
 }
