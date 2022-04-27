@@ -18,21 +18,24 @@ class TrabajadorTestCase {
 		primerIngreso = new Ingreso("Enero", "Sueldo", 50000d);
 		segundoIngreso = new IngresoPorHorasExtra("Enero", "Adicional Semana Santa", 15000d);
 		tercerIngreso = new Ingreso("Febrero", "Sueldo", 50000d);
+		leo.addIngreso(primerIngreso);
+		leo.addIngreso(segundoIngreso);
+		leo.addIngreso(tercerIngreso);
 	}
 
 	@Test
 	void testTotalPercibido() {
-		assertThat(115000d,leo.getTotalPercibido());	
+		assertEquals(115000d,leo.getTotalPercibido());	
 	}
 	
 	@Test
 	void testMontoImponible() {
-		assertThat(100000d,leo.getMontoImponible());	
+		assertEquals(100000d,leo.getMontoImponible());	
 	}
 	
 	@Test
 	void testImpuestoAPagar() {
-		assertThat(2000d,leo.getImpuestoAPagar());	
+		assertEquals(2000d,leo.getImpuestoAPagar());	
 	}
 
 }
