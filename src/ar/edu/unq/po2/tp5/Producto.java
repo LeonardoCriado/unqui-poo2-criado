@@ -45,9 +45,9 @@ public class Producto {
 	}
 
 
-	public void registrarseEnCaja(Caja caja) {
-		// TODO Auto-generated method stub
-		
+	public void registrarseEnCaja(Caja caja) throws Exception {
+		caja.incrementarMontoTotalAPagar(this.precio());
+		this.disminuirStock(1);
 	}
 
 }
