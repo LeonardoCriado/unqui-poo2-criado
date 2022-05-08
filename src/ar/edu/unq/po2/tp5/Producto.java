@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class Producto {
+public class Producto implements Facturable{
 	
 	protected double precioBase;
 	protected int stock;

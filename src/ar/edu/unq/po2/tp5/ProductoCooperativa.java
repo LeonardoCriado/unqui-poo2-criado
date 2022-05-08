@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class ProductoCooperativa extends Producto{
+public class ProductoCooperativa extends Producto implements Facturable{
 	
 	protected double porcentajeDescuento;
 
