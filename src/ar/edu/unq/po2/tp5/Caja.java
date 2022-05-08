@@ -16,7 +16,7 @@ public class Caja {
 		this.setMontoTotalAPagar(getMontoTotalAPagar() + monto);
 	}
 	
-	public void registrarProducto(Producto producto) {
+	public void registrarProducto(Producto producto) throws Exception {
 		producto.registrarseEnCaja(this);
 	}
 }
