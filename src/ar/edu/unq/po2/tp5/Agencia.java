@@ -15,8 +15,8 @@ public class Agencia implements iAgencia{
 
 
 	@Override
-	public void registrarPago(Factura f) {
-		pagosRegistrados.add(f);		
+	public void registrarPago(Factura factura) {
+		pagosRegistrados.add(factura);		
 	}
 	
 	
