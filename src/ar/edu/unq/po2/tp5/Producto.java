@@ -5,7 +5,6 @@ public class Producto {
 	protected double precioBase;
 	protected int stock;
 	
-	
 
 	public Producto(double precioBase, int stock) {
 		super();
@@ -13,17 +12,14 @@ public class Producto {
 		this.stock = stock;
 	}
 
-
-	protected int getStock() {
+	public int getStock() {
 		return stock;
 	}
-
 
 
 	protected void setStock(int stock) {
 		this.stock = stock;
 	}
-
 
 
 	protected double getPrecioBase() {
