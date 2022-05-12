@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tp6;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Banco {
 	
@@ -9,14 +10,11 @@ public class Banco {
 	protected List<ISolicitudDeCredito> solicitudes;
 	
 
-	
 	public Banco() {
 		super();
 		this.clientes = new ArrayList<ICliente>();
 		this.solicitudes = new ArrayList<ISolicitudDeCredito>();;
 	}
-
-
 
 	public void addCliente(ICliente cliente){
 		this.clientes.add(cliente);
@@ -32,10 +30,23 @@ public class Banco {
 		this.solicitudes.add(nuevaSolicitudH);
 	}
 	
-	protected void evaluarSolicitudDeCredito(ISolicitudDeCredito solicitud) {
-		if (solicitud.esAceptable()) {
-			// TODO: entregar dinero al cliente
-		}
+	protected double evaluarSolicitudDeCredito(ISolicitudDeCredito solicitud) {
+		if (solicitud.esAceptable()) {return solicitud.getMontoSolicitado();}
+		else return 0;
+	}
+	
+	public double montoTotalADesembolsar(){
+		/*List<ISolicitudDeCredito> solicitudesAceptadas = solicitudes
+																.stream()
+																.filter(soli -> soli.esAceptable())
+																.collect(Collectors.toList());*/
+		return solicitudes
+					.stream()
+					.filter(soli -> soli.esAceptable())
+					.collect(Collectors.toList())
+						.stream()
+						.mapToDouble(ISolicitudDeCredito::getMontoSolicitado)
+						.sum();
 	}
 	
 	
