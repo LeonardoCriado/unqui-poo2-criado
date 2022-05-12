@@ -30,23 +30,19 @@ public class Banco {
 		this.solicitudes.add(nuevaSolicitudH);
 	}
 	
-	protected double evaluarSolicitudDeCredito(ISolicitudDeCredito solicitud) {
-		if (solicitud.esAceptable()) {return solicitud.getMontoSolicitado();}
-		else return 0;
-	}
 	
 	public double montoTotalADesembolsar(){
-		/*List<ISolicitudDeCredito> solicitudesAceptadas = solicitudes
+		/*List<ISolicitudDeCredito> solicitudesAceptadas = solicitudes 									//Para validar
 																.stream()
 																.filter(soli -> soli.esAceptable())
 																.collect(Collectors.toList());*/
 		return solicitudes
 					.stream()
 					.filter(soli -> soli.esAceptable())
-					.collect(Collectors.toList())
+					.collect(Collectors.toList())  			//Filtrando solicitudes aceptables
 						.stream()
 						.mapToDouble(ISolicitudDeCredito::getMontoSolicitado)
-						.sum();
+						.sum();								//Sumando monto solicitado
 	}
 	
 	
