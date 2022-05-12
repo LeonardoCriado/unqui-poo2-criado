@@ -12,4 +12,6 @@ public class SolicitudDeCreditoPersonal extends SolicitudDeCredito {
 		return false;
 	}
 
+
+
 }

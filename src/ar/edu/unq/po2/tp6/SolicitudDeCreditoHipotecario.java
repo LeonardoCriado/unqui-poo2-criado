@@ -12,4 +12,6 @@ public class SolicitudDeCreditoHipotecario extends SolicitudDeCredito {
 		return false;
 	}
 
+
+
 }
