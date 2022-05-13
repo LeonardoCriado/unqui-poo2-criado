@@ -22,6 +22,10 @@ public class SolicitudDeCreditoPersonal extends SolicitudDeCredito {
 	private double montoCuota() {
 		return montoSolicitado/plazoEnMeses;
 	}
+	
+	public double getMontoSolicitado() {
+		return montoSolicitado;
+	}
 
 
 

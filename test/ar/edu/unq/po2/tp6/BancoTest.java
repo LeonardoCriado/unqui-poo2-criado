@@ -27,8 +27,8 @@ class BancoTest {
 	void testPrestamoPersonal() {
 		banco.addCliente(persona);
 		banco.addSolicitudDeCreditoPersonal(persona, 30000d, 12);
-		banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
-		assertEquals(100000d, banco.montoTotalADesembolsar());
+		//banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
+		assertEquals(30000d, banco.montoTotalADesembolsar());
 	}
 	
 	@Test
@@ -44,6 +44,12 @@ class BancoTest {
 		banco.addSolicitudDeCreditoHipotecario(persona, 3000000d, 60, propiedadGarantia);
 		banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
 		assertEquals(3070000d, banco.montoTotalADesembolsar());
+	}
+	
+	@Test	
+	void testPersona() {
+		assertEquals(90000d*12, persona.sueldoNetoAnual());
+		assertEquals(90000d, persona.getSueldoNetoMensual());
 	}
 
 }

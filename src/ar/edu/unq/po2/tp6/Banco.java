@@ -42,7 +42,8 @@ public class Banco {
 					.collect(Collectors.toList())
 						.stream()							//Sumando monto solicitado
 						.mapToDouble(ISolicitudDeCredito::getMontoSolicitado)
-						.sum();								
+						.sum();		
+		
 	}
 	
 	

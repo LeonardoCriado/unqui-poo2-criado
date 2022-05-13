@@ -10,8 +10,7 @@ public class Salario implements ISalario {
 
 	@Override
 	public double sueldoNetoAnual() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.sueldoNetoMensual()*12;
 	}
 
 	@Override
