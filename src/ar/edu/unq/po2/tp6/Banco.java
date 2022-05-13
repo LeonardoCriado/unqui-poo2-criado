@@ -21,12 +21,12 @@ public class Banco {
 	}
 	
 	public void addSolicitudDeCreditoPersonal(ICliente cliente, double montoSolicitado, int plazoEnMeses){
-		ISolicitudDeCredito nuevaSolicitudP = new SolicitudDeCreditoPersonal(cliente, montoSolicitado, plazoEnMeses);
+		ISolicitudDeCredito nuevaSolicitudP = new SolicitudDeCreditoPersonal((ISolicitante)cliente, montoSolicitado, plazoEnMeses);
 		this.solicitudes.add(nuevaSolicitudP);
 	}
 	
 	public void addSolicitudDeCreditoHipotecario(ICliente cliente, double montoSolicitado, int plazoEnMeses, IPropiedad garantia){
-		ISolicitudDeCredito nuevaSolicitudH = new SolicitudDeCreditoHipotecario(cliente, montoSolicitado, plazoEnMeses, garantia);
+		ISolicitudDeCredito nuevaSolicitudH = new SolicitudDeCreditoHipotecario((ISolicitante)cliente, montoSolicitado, plazoEnMeses, garantia);
 		this.solicitudes.add(nuevaSolicitudH);
 	}
 	

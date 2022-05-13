@@ -25,6 +25,11 @@ public class Persona implements ICliente, ISolicitante {
 	public double getSueldoNetoMensual() {
 		return salario.sueldoNetoMensual();
 	}
+
+	@Override
+	public int getEdad() {
+		return this.edad;
+	}
 	
 	
 }

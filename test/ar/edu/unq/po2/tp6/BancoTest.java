@@ -19,8 +19,8 @@ class BancoTest {
 		banco = new Banco();
 		persona = new Persona("Leonardo", "Criado","Venezuela 2183", 33, 90000d);
 		propiedadGarantia = new Propiedad("Casa de familia","Venezuela 2183", 1500000d);
-		solCreditoPersonal = new SolicitudDeCreditoPersonal(persona, 30000, 12);
-		solCreditoHipotecario = new SolicitudDeCreditoHipotecario(persona, 3000000, 60, propiedadGarantia);
+		solCreditoPersonal = new SolicitudDeCreditoPersonal((ISolicitante) persona, 30000, 12); 			//Está ok esto?
+		solCreditoHipotecario = new SolicitudDeCreditoHipotecario((ISolicitante) persona, 3000000, 60, propiedadGarantia);
 	}
 
 	@Test
@@ -34,16 +34,16 @@ class BancoTest {
 	@Test
 	void testPrestamoHipotecario() {
 		banco.addCliente(persona);
-		banco.addSolicitudDeCreditoHipotecario(persona, 3000000d, 60, propiedadGarantia);
-		assertEquals(3000000d, banco.montoTotalADesembolsar());
+		banco.addSolicitudDeCreditoHipotecario(persona, 300000d, 60, propiedadGarantia);
+		assertEquals(300000d, banco.montoTotalADesembolsar());
 	}
 	
 	@Test
 	void testPrestamos() {
 		banco.addCliente(persona);
-		banco.addSolicitudDeCreditoHipotecario(persona, 3000000d, 60, propiedadGarantia);
+		banco.addSolicitudDeCreditoHipotecario(persona, 300000d, 60, propiedadGarantia);
 		banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
-		assertEquals(3070000d, banco.montoTotalADesembolsar());
+		assertEquals(370000d, banco.montoTotalADesembolsar());
 	}
 	
 	@Test	

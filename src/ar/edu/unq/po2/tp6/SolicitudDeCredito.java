@@ -2,9 +2,23 @@ package ar.edu.unq.po2.tp6;
 
 public abstract class SolicitudDeCredito implements ISolicitudDeCredito {
 	
+	protected ISolicitante solicitante;
+	protected double montoSolicitado;
+	protected int plazoEnMeses;
+	
+	
+	public SolicitudDeCredito(ISolicitante cliente, double montoSolicitado, int plazoEnMeses) {
+		this.solicitante = cliente;
+		this.montoSolicitado = montoSolicitado;
+		this.plazoEnMeses = plazoEnMeses;
+	}
+	
 	public double getMontoSolicitado() {
-		// TODO Auto-generated method stub
-		return 0;
+		return montoSolicitado;
+	}
+	
+	protected double montoCuota() {
+		return this.montoSolicitado/this.plazoEnMeses;
 	}
 
 }
