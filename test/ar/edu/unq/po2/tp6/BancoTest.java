@@ -17,7 +17,7 @@ class BancoTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		banco = new Banco();
-		persona = new Persona("Leonardo", "Criado", 33, 90000d);
+		persona = new Persona("Leonardo", "Criado","Venezuela 2183", 33, 90000d);
 		propiedadGarantia = new Propiedad("Casa de familia","Venezuela 2183", 1500000d);
 		solCreditoPersonal = new SolicitudDeCreditoPersonal(persona, 30000, 12);
 		solCreditoHipotecario = new SolicitudDeCreditoHipotecario(persona, 3000000, 60, propiedadGarantia);
