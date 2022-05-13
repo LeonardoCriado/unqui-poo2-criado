@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tp6;
 
 public class SolicitudDeCreditoHipotecario extends SolicitudDeCredito {
 
-	public SolicitudDeCreditoHipotecario(ICliente cliente, double montoSolicitado, int plazoEnMeses) {
+	public SolicitudDeCreditoHipotecario(ICliente cliente, double montoSolicitado, int plazoEnMeses, IPropiedad garantia) {
 		// TODO Auto-generated constructor stub
 	}
 

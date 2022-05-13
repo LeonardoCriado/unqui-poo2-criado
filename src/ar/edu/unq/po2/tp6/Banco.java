@@ -25,8 +25,8 @@ public class Banco {
 		this.solicitudes.add(nuevaSolicitudP);
 	}
 	
-	public void addSolicitudDeCreditoHipotecario(ICliente cliente, double montoSolicitado, int plazoEnMeses){
-		ISolicitudDeCredito nuevaSolicitudH = new SolicitudDeCreditoHipotecario(cliente, montoSolicitado, plazoEnMeses);
+	public void addSolicitudDeCreditoHipotecario(ICliente cliente, double montoSolicitado, int plazoEnMeses, IPropiedad garantia){
+		ISolicitudDeCredito nuevaSolicitudH = new SolicitudDeCreditoHipotecario(cliente, montoSolicitado, plazoEnMeses, garantia);
 		this.solicitudes.add(nuevaSolicitudH);
 	}
 	
@@ -37,12 +37,12 @@ public class Banco {
 																.filter(soli -> soli.esAceptable())
 																.collect(Collectors.toList());*/
 		return solicitudes
-					.stream()
+					.stream()							  	//Filtrando solicitudes aceptables
 					.filter(soli -> soli.esAceptable())
-					.collect(Collectors.toList())  			//Filtrando solicitudes aceptables
-						.stream()
+					.collect(Collectors.toList())
+						.stream()							//Sumando monto solicitado
 						.mapToDouble(ISolicitudDeCredito::getMontoSolicitado)
-						.sum();								//Sumando monto solicitado
+						.sum();								
 	}
 	
 	
