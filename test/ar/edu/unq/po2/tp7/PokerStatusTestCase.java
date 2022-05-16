@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 class PokerStatusTestCase {
 	
 	
-	protected PokerStatus validadorPoker; //SUT
+	protected JuegoStatus validadorPoker; //SUT
 
 	@BeforeEach
 	void setUp() throws Exception {
 		//SETUP
-		validadorPoker = new PokerStatus();
+		validadorPoker = new JuegoStatus();
 	}
 
 	@Test
@@ -47,6 +47,36 @@ class PokerStatusTestCase {
 	@Test
 	void testPokerFalseConTodasDistintas() {
 		assertNotEquals("Poquer",validadorPoker.verificar("5D","7P","6C","9T","10D"));
+	}
+	
+	@Test
+	void testColorOk() {
+		assertEquals("Color",validadorPoker.verificar("5D","7D","6D","9D","10D"));
+	}
+	
+	@Test
+	void testColorNotOk() {
+		assertNotEquals("Color",validadorPoker.verificar("5D","7P","6D","9D","10D"));
+	}
+	
+	@Test
+	void testTrioOk() {
+		assertEquals("Trio",validadorPoker.verificar("5D","7P","7T","7D","10D"));
+	}
+	
+	@Test
+	void testTrioNotOk() {
+		assertNotEquals("Trio",validadorPoker.verificar("7C","7P","7T","7D","10D"));
+	}
+	
+	@Test
+	void testNadaOk() {
+		assertEquals("Nada",validadorPoker.verificar("5D","7P","6T","7D","10D"));
+	}
+	
+	@Test
+	void testNadaNotOk() {
+		assertNotEquals("Nada",validadorPoker.verificar("7C","7P","7T","7D","10D"));
 	}
 
 }
