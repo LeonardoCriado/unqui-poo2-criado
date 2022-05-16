@@ -27,8 +27,8 @@ class BancoTest {
 	void testPrestamoPersonal() {
 		banco.addCliente(persona);
 		banco.addSolicitudDeCreditoPersonal(persona, 30000d, 12);
-		//banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
-		assertEquals(30000d, banco.montoTotalADesembolsar());
+		banco.addSolicitudDeCreditoPersonal(persona, 70000d, 24);
+		assertEquals(100000d, banco.montoTotalADesembolsar());
 	}
 	
 	@Test
