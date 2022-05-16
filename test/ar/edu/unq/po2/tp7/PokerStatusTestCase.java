@@ -26,7 +26,7 @@ class PokerStatusTestCase {
 	
 	@Test
 	void testPokerTrueFiguras() {
-		assertEquals(true,validadorPoker.verificar("AD","AP","AC","10T","AT"));
+		assertEquals(true,validadorPoker.verificar("QD","QP","QC","10T","QT"));
 	}
 	
 	@Test
