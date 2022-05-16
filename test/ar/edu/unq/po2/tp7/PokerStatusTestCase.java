@@ -19,34 +19,34 @@ class PokerStatusTestCase {
 	@Test
 	void testPokerTrueNumeros2Cifras() {
 		//EXERCISE
-		boolean resultado = validadorPoker.verificar("10D","10P","10C","10T","5D");
+		String resultado = validadorPoker.verificar("10D","10P","10C","10T","5D");
 		//VERIFY
-		assertEquals(true,resultado);
+		assertEquals("Poquer",resultado);
 	}
 	
 	@Test
 	void testPokerTrueFiguras() {
-		assertEquals(true,validadorPoker.verificar("QD","QP","QC","10T","QT"));
+		assertEquals("Poquer",validadorPoker.verificar("QD","QP","QC","10T","QT"));
 	}
 	
 	@Test
 	void testPokerTrueNumeros() {
-		assertEquals(true,validadorPoker.verificar("5D","5P","5C","10T","5T"));
+		assertEquals("Poquer",validadorPoker.verificar("5D","5P","5C","10T","5T"));
 	}
 	
 	@Test
 	void testPokerFalseCon3ok() {
-		assertEquals(false,validadorPoker.verificar("5D","5P","5C","10T","10D"));
+		assertNotEquals("Poquer",validadorPoker.verificar("5D","5P","5C","10T","10D"));
 	}
 	
 	@Test
 	void testPokerFalseCon2ok() {
-		assertEquals(false,validadorPoker.verificar("5D","5P","6C","10T","10D"));
+		assertNotEquals("Poquer",validadorPoker.verificar("5D","5P","6C","10T","10D"));
 	}
 	
 	@Test
 	void testPokerFalseConTodasDistintas() {
-		assertEquals(false,validadorPoker.verificar("5D","7P","6C","9T","10D"));
+		assertNotEquals("Poquer",validadorPoker.verificar("5D","7P","6C","9T","10D"));
 	}
 
 }

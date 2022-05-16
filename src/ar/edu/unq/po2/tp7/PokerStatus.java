@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 public class PokerStatus {
 	
-	private static final Long cartasIguales = (long) 4;
+	
 
-	public boolean verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public String verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
 		List<String> numeroDeCartas = new ArrayList<String>();	
 		Collections.addAll(numeroDeCartas, 
 										this.numero(carta1), 
@@ -18,8 +18,15 @@ public class PokerStatus {
 										this.numero(carta3),
 										this.numero(carta4),
 										this.numero(carta5));
+		if(this.tieneCantidadDeOcurrencias(numeroDeCartas,4)) {return "Poquer";} 
+			else {return "Nada";}
+	}
+
+	
+	private boolean tieneCantidadDeOcurrencias(List<String> lista, int cantidad) {
+		Long cartasIguales = (long) cantidad;
 		Map<Object, Long> counts =
-				numeroDeCartas
+				lista
 					.stream()
 					.collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 		return counts.containsValue(cartasIguales);
