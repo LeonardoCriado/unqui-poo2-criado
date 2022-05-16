@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class ColorStatus {
 	
-	public boolean verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public boolean verificar(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
 		Set<String> colorDeCartas = new HashSet<String>();	
 		Collections.addAll(colorDeCartas, 
 										this.color(carta1), 
@@ -18,8 +18,8 @@ public class ColorStatus {
 	}
 
 	
-	private String color(String carta) {
-		return carta.substring(carta.length()-1);
+	private String color(Carta carta1) {
+		return carta1.getPalo();
 	}
 
 }

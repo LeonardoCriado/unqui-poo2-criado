@@ -15,7 +15,7 @@ public class JuegoStatus {
 	}
 	
 	
-	public String verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public String verificar(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
 		if (this.poker.verificar(carta1, carta2, carta3, carta4, carta5)) {return "Poquer";} else 
 		{if (this.color.verificar(carta1, carta2, carta3, carta4, carta5)) {return "Color";} else 
 		{if (this.trio.verificar(carta1, carta2, carta3, carta4, carta5)) {return "Trio";} else

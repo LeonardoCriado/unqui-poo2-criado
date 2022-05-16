@@ -15,7 +15,7 @@ public class CantidadDeCartasStatus {
 		this.cantidad = cantidad;
 	}
 
-	public boolean verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public boolean verificar(Carta carta1, Carta carta2, Carta carta3, Carta carta4, Carta carta5) {
 		List<String> numeroDeCartas = new ArrayList<String>();	
 		Collections.addAll(numeroDeCartas, 
 										this.numero(carta1), 
@@ -27,8 +27,8 @@ public class CantidadDeCartasStatus {
 	}
 
 	
-	private String numero(String carta) {
-		return carta.substring(0, carta.length()-1);
+	private String numero(Carta carta1) {
+		return carta1.getValor();
 	}
 
 
