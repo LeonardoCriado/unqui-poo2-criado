@@ -15,7 +15,5 @@ public class ContadorOcurrencias {
 					.collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 		return counts.containsValue(cartasIguales);
 	}
-	
-	
-	
+
 }
