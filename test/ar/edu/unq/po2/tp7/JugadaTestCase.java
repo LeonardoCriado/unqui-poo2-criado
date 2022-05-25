@@ -5,7 +5,6 @@ import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 
 
@@ -14,7 +13,7 @@ class JugadaTestCase {
 	public Jugada jugada1;
 	
 	//DOCs
-	@Mock public JuegoStatus status1;		
+	public JuegoStatus status1;		
 	public Mano mano1;
 	public Mano mano2;
 	
@@ -25,7 +24,6 @@ class JugadaTestCase {
 		jugada1 = new Jugada();
 		mano1 = mock(Mano.class);
 		mano2 = mock(Mano.class);
-		
 	}
 
 	@Test
@@ -46,32 +44,103 @@ class JugadaTestCase {
 		verify(mano2, times(2)).verificarJugada();
 
 	}
-	 /*
+	
 	@Test
 	void testColorLeGanaATrio() {
-		mock();
+		//Test Double Configuration
+		when(mano1.verificarJugada()).thenReturn("Color");
+		when(mano2.verificarJugada()).thenReturn("Trio");
+		jugada1.addMano(mano1);
+		jugada1.addMano(mano2);
+		
+		//Exercise
+		Mano manoResultado = jugada1.manoGanadora();
+		
+				
+		//Verify
+		assertEquals(mano1, manoResultado);
+		verify(mano1, times(3)).verificarJugada();
+		verify(mano2, times(2)).verificarJugada();
+
 	}
+	
 	
 	@Test
 	void testPoquerLeGanaATrio() {
-		mock();
+		//Test Double Configuration
+		when(mano1.verificarJugada()).thenReturn("Poker");
+		when(mano2.verificarJugada()).thenReturn("Trio");
+		jugada1.addMano(mano1);
+		jugada1.addMano(mano2);
+		
+		//Exercise
+		Mano manoResultado = jugada1.manoGanadora();
+		
+				
+		//Verify
+		assertEquals(mano1, manoResultado);
+		verify(mano1, times(3)).verificarJugada();
+		verify(mano2, times(2)).verificarJugada();
 	}
+	
+	
 	
 	@Test
 	void testTrioNoLeGanaAPoker() {
-		mock();
+		//Test Double Configuration
+		when(mano1.verificarJugada()).thenReturn("Trio");
+		when(mano2.verificarJugada()).thenReturn("Poker");
+		jugada1.addMano(mano1);
+		jugada1.addMano(mano2);
+		
+		//Exercise
+		Mano manoResultado = jugada1.manoGanadora();
+		
+				
+		//Verify
+		assertEquals(mano2, manoResultado);
+		verify(mano1, times(3)).verificarJugada();
+		verify(mano2, times(2)).verificarJugada();
 	}
 	
 	@Test
 	void testTrioNoLeGanaAColor() {
-		mock();
+		//Test Double Configuration
+		when(mano1.verificarJugada()).thenReturn("Trio");
+		when(mano2.verificarJugada()).thenReturn("Color");
+		jugada1.addMano(mano1);
+		jugada1.addMano(mano2);
+		
+		//Exercise
+		Mano manoResultado = jugada1.manoGanadora();
+		
+				
+		//Verify
+		assertEquals(mano2, manoResultado);
+		verify(mano1, times(4)).verificarJugada();
+		verify(mano2, times(2)).verificarJugada();
 	}
 	
 	@Test
 	void testColorNoLeGanaAPoker() {
-		mock();
+		//Test Double Configuration
+		when(mano1.verificarJugada()).thenReturn("Color");
+		when(mano2.verificarJugada()).thenReturn("Poker");
+		jugada1.addMano(mano1);
+		jugada1.addMano(mano2);
+		
+		//Exercise
+		Mano manoResultado = jugada1.manoGanadora();
+		
+				
+		//Verify
+		assertEquals(mano2, manoResultado);
+		verify(mano1, times(3)).verificarJugada();
+		verify(mano2, times(2)).verificarJugada();
 	}
 	
+	
+	/*
 	@Test
 	void testPokerYGanaPorValorDeCartas() {
 		mock();

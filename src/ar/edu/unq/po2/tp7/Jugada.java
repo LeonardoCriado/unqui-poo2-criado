@@ -35,6 +35,7 @@ public class Jugada {
 		// TODO agregar lógica correcta
 		return mano;
 	}
+	
 
 	private Mano ganadorJugada(Mano mano, Mano ganador) { //Poker > Color > Trio
 		switch(mano.verificarJugada()) {
@@ -43,7 +44,7 @@ public class Jugada {
 			case "Color":
 				if (ganador.verificarJugada().equals("Poker")) return ganador; else return mano;
 			case "Trio":
-				return mano;
+				return ganador;
 			default:
 				return ganador;
 		}
